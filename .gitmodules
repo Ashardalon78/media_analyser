@@ -1,0 +1,6 @@
+[submodule "comment_analysis_trainer"]
+	path = comment_analysis_trainer
+	url = https://github.com/Ashardalon78/comment_analysis_trainer
+[submodule "instalyser"]
+	path = instalyser
+	url = https://github.com/Ashardalon78/Instalyzer
