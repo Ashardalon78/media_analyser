@@ -12,7 +12,8 @@ class media_analyser():
             self.model = pickle.load(filein)
 
         with open(datapath, 'rb') as filein:
-            self.df_main = pickle.load(filein)
+            #self.df_main = pickle.load(filein)
+            self.df_comments = pickle.load(filein)
 
     def prepare_comment_df(self, comments_col='Comments_text', owner='ashardalon78'):
         comments = self.df_main[comments_col].explode().dropna()
@@ -27,7 +28,8 @@ class media_analyser():
         #print(self.df_comments)
         #print(self.df_main[comments_col][102])
 
-    def predict_comment_sentiment(self, cvpath):
+    def predict_comment_sentiment(self, cvpath, comments_col='Comments_text'):
+        self.df_comments = ca.CommmentAnalyser.transform_comments(self.df_comments, colname=comments_col)
         #self.df_main = ca.CommmentAnalyser.transform_comments(self.df_main, colname='Comments_text')
         #self.df_comments = ca.CommmentAnalyser.transform_comments(self.df_comments, colname='Comments_text')
 
