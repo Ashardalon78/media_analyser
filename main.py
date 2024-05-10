@@ -8,6 +8,8 @@ ma = media_analyser('comment_analysis_trainer/saved_data/best_model_RF.pkl', 'in
 ma.predict_comment_sentiment('comment_analysis_trainer/saved_data/cv.pkl', comments_col='Comments_text')
 ma.rate_comment()
 #ma.write_rated_to_df_main() #to instalyser
-#ma.plot_rating('Likes')
+ma.write_rated_to_specific_df()
+ma.plot_rating('Likes', xlabel='Post ID', ylabel='Popularity', show=False)
 #ma.plot_rating('Comments_Rating')
-#ma.plot_rating('Rating_Total')
+ma.plot_rating('Rating_Total', xlabel='Post ID', ylabel='Popularity', show=True)
+#ma.show_plot('Post ID', 'Popularity')
