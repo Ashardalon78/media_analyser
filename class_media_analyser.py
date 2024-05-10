@@ -68,12 +68,8 @@ class media_analyser():
     def plot_rating(self, yname, xlabel=None, ylabel=None, show=True):
         x, y = self.ic.get_plotting_data(yname)
 
-        plt.plot(x, y)
+        plt.plot(x, y, label=yname)
         if xlabel: plt.xlabel(xlabel)
         if ylabel: plt.ylabel(ylabel)
+        plt.legend()
         if show: plt.show()
-
-    # def show_plot(self, xlabel, ylabel):
-    #     plt.xlabel(xlabel)
-    #     plt.ylabel(ylabel)
-    #     plt.show()
